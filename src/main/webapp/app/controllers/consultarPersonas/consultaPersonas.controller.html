@@ -1,0 +1,17 @@
+<div ng-controller="consultaPersonasCtl">
+    <br><br><br>
+    <center>
+        <h3>ACTUALIZAR PERSONAS</h3>
+    </center>
+    <form ng-submit="consultaPersona()">
+        <table align="center">
+            <tr>
+                <th>ID*:</th>
+                <th><input type="text" ng-model="persona.nbPersonIdn" required></th>
+            </tr>
+        </table>
+        <center>
+            <input type="submit" name="enviar" value="ENVIAR">
+        </center>
+    </form>
+</div>

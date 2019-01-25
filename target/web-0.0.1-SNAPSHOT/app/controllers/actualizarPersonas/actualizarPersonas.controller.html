@@ -1,0 +1,47 @@
+<div ng-controller="actualizarPersonasCtl">
+    <br><br><br>
+    <div class="container">
+        <center>
+            <h3>ACTUALIZAR PERSONAS</h3>
+        </center>
+        <form class="form-horizontal" ng-submit="actualizarPersona()">
+            <div class="form-group row">
+                <label class="col-md-2 control-label" for="id">ID*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="persona.nbPersonIdn" id="id" required>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="nombre">NOMBRE*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="persona.vrPersonNoms" id="nombre" required>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="genero">GENERO*:</label>
+                <div class="col-md-10">
+                    <select class="form-control"   ng-model="persona.genero" id="genero" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="fechan">FECHA NACIMIENTO*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="date" ng-model="persona.dtPersonNac" id="fechan" required>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="telefono">TELEFONO:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="persona.vrPersonTel" id="telefono">
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="usuarioupd">USUARIO UPD*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="persona.vrAdtUsrupd" id="usuarioupd" required>
+                </div>
+            </div>
+            <center>
+                <input type="submit" class="btn btn-success" name="enviar" value="ENVIAR">
+            </center>
+        </form>
+    </div>
+</div>

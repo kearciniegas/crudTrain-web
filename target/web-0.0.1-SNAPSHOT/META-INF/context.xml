@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+
+    <Resource name="jdbc/crudTrain" auth="Container" type="javax.sql.DataSource"
+              driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@//172.20.0.109:1521/b2zgeo"
+              username="b2zgeo" password="b2z2017$" initialSize="5" maxIdle="10"
+              maxWaitMillis="-1" removeAbandoned="true" removeAbandonedTimeout="60"
+              logAbandoned="true" validationQuery="select 1 from dual" testOnBorrow="true"
+              testWhileIdle="true" timeBetweenEvictionRunsMillis="30000"/>
+
+</Context>

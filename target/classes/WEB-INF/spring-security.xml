@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+        xmlns:beans="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/security"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http pattern="/**/*.css" security="none"/>
+    <http pattern="/**/*.js" security="none"/>
+    <http pattern="/**/*.map" security="none"/>
+    <http pattern="/crearUsuario.html" security="none"/>
+    <http pattern="/login.html" security="none"></http>
+    <http pattern="/web/usuario/crearUsuari" security="none"/>
+
+    <http auto-config="true" use-expressions="true">
+
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+
+        <form-login login-page="/login.html"
+                    login-processing-url="/j_spring_security_check"
+                    username-parameter="username"
+                    password-parameter="password"
+                    authentication-failure-url="/login.html?error=true"/>
+
+        <logout logout-url="/j_spring_security_logout"
+                invalidate-session="true"
+                logout-success-url="/login.html"/>
+        <session-management invalid-session-url="/login.html"></session-management>
+        <access-denied-handler error-page="/login.html"></access-denied-handler>
+        <csrf disabled="true"></csrf>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="seguridadUserDatailsService">
+            <password-encoder hash="sha"/>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

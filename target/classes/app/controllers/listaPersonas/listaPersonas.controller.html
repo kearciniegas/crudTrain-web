@@ -1,0 +1,32 @@
+<div ng-controller="myCtrl">
+    <center>
+        <br><br><br>
+        <h3>LISTA PERSONAS</h3>
+        <div class="col-md-4 col-lg-offset-4">
+            <input class="form-control" type="text" placeholder="Buscar" ng-model="Filtro">
+        </div>
+    </center>
+    <br>
+<table width="90%" align="center" STYLE="text-align: center;">
+    <tr>
+        <th width="5%">ID</th>
+        <th width="15%">NOMBRE</th>
+        <th width="10%">GENERO</th>
+        <th width="10%">FECHA NACIMIENTO</th>
+        <th width="10%">TELEFONO</th>
+        <th width="10%">FECHA UPD</th>
+        <th width="10%">USUARIO UPD</th>
+        <th width="10%"></th>
+    </tr>
+    <tr ng-repeat="person in persona| filter : Filtro">
+        <td>{{person.nbPersonIdn}}</td>
+        <td>{{person.vrPersonNoms}}</td>
+        <td>{{person.vrPersonGen}}</td>
+        <td>{{person.dtPersonNac | date: 'dd-MM-yyyy'}}</td>
+        <td>{{person.vrPersonTel}}</td>
+        <td>{{person.dtAdtFchupd | date: 'dd-MM-yyyy mm:ss' }}</td>
+        <td>{{person.vrAdtUsrupd}}</td>
+        <td><span class="glyphicon glyphicon-pencil"></span></td>
+    </tr>
+</table>
+</div>

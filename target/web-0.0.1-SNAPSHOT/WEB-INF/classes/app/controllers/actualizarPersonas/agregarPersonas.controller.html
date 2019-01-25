@@ -1,0 +1,33 @@
+<div ng-controller="agregarPersonasCtl">
+    <br><br><br>
+    <center>
+    <h3>AGREGAR PERSONAS</h3>
+    </center>
+    <form ng-submit="guardarPersona()">
+        <table align="center">
+            <tr>
+                <th>NOMBRE*:</th>
+                <th><input type="text" ng-model="persona.vrPersonNoms" required></th>
+            </tr>
+            <tr>
+                <th>GENERO*:</th>
+                <th><input type="text" ng-model="persona.vrPersonGen" minlength="1" maxlength="1" required></th>
+            </tr>
+            <tr>
+                <th>FECHA NACIMIENTO*:</th>
+                <th><input type="date" ng-model="persona.dtPersonNac" required></th>
+            </tr>
+            <tr>
+                <th>TELEFONO:</th>
+                <th><input type="text" ng-model="persona.vrPersonTel"></th>
+            </tr>
+            <tr>
+                <th>USUARIO UPD*:</th>
+                <th><input type="text" ng-model="persona.vrAdtUsrupd" required></th>
+            </tr>
+        </table>
+        <center>
+            <input type="submit" name="enviar" value="ENVIAR">
+        </center>
+    </form>
+</div>

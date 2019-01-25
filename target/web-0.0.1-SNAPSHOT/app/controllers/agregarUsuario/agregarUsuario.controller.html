@@ -1,0 +1,35 @@
+<div ng-controller="agregarUsuarioCtl">
+    <br><br><br>
+    <div class="container">
+        <center>
+            <h3>AGREGAR USUARIO</h3>
+        </center>
+        <form class="form-horizontal" ng-submit="guardarUsuario()">
+            <div class="form-group row">
+                <label class="col-md-2 control-label" for="id">ID*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="number" ng-model="user.idPersona" id="id" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="nombre">NOMBRE*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="user.nombre" id="nombre" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="clave">CONTRASEÑA*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="password" ng-model="user.clave" id="clave" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="correo">CORREO ELECTRONICO*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="email" ng-model="user.correo" id="correo" required/>
+                </div>
+                <br><br>
+            </div>
+            <center>
+                <input type="submit" class="btn btn-success" name="enviar" value="ENVIAR">
+            </center>
+        </form>
+    </div>
+</div>

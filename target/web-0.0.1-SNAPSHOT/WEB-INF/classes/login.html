@@ -1,0 +1,113 @@
+<html ng-app="loginApp">
+<head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <script src="src/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="src/libs/jquery/jquery.min.js"></script>
+    <script src="app/module/app.login.js"></script>
+    <script src="app/controllers/login/login.controller.js"></script>
+    <script type="text/javascript" src="src/libs/angular/angular.min.js"></script>
+    <script type="text/javascript" src="src/libs/angular/angular-route.js"></script>
+    <script type="text/javascript" src="app/controllers/crearUsuario/crearUsuario.controller.js"></script>
+</head>
+<div ng-controller="loginController">
+<center>
+    <input class="btn btn-success" type="submit" id="button" value="REGISTRARTE" ng-click="ShowHide()" />
+</center>
+</div>
+<div style="position: absolute;top: 12%;left: 41%;border-radius:5px;border: 1px solid #d8dee2;font-size: 14px; padding: 20px;" ng-hide="IsVisible" id="login">
+    <h4 align="center">LOGIN</h4>
+    <div class="container">
+        <form class="form-horizontal" method="POST" action="j_spring_security_check">
+            <div class="form-group row">
+                <div>
+                    <label class="col-md-10 control-label" for="username">Usuario</label>
+                    <input class="form-control" type="text" name="username" id="username">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div>
+                    <label class="col-md-10 control-label" for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password">
+                </div>
+            </div>
+            <br>
+            <center>
+                <input type="submit" class="btn btn-success" name="enviar" value="ENVIAR">
+            </center>
+        </form>
+    </div>
+</div>
+
+<div id="form" ng-show="checked">
+    <div style="position: absolute;top: 75%;left: 1%;font-size: 14px;">
+        <center>
+            <h3>REGISTRARSE</h3>
+        </center>
+        <form class="form-horizontal" ng-submit="crearUsuario()">
+            <div class="form-group row">
+                <label class="col-md-2 control-label" for="id">ID*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="number" ng-model="crear.id" id="id" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="nombre">NOMBRE*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="crear.nombre" id="nombre" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="genero">GENERO*:</label>
+                <div class="col-md-10">
+                    <select class="form-control" ng-model="crear.genero" id="genero" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="fcnacimiento">FECHA NACIMIENTO*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="data" ng-model="crear.fcnacimiento" id="fcnacimiento" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="telefono">TELEFONO*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="crear.telefono" id="telefono" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="usuarioupd">USUARIO UPD*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="email" ng-model="crear.usuarioupd" id="usuarioupd" required/>
+                </div>
+                <input type="submit" class="btn btn-success" name="enviar" value="REGISTRAR"
+                       style="position: relative;left: 45%;"/>
+            </div>
+        </form>
+        <form class="form-horizontal" ng-submit="crearIngresar()">
+            <div class="form-group row">
+                <label class="col-md-2 control-label" for="nick">NICK*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" ng-model="crear.nick" id="nick" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="clave">CONTRASEÑA*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="password" ng-model="crear.clave" id="clave" min="6" required/>
+                </div>
+                <br><br>
+                <label class="col-md-2 control-label" for="correo">CORREO ELECTRONICO*:</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="email" ng-model="crear.correo" id="correo" required/>
+                </div>
+                <br><br><br>
+                <input type="submit" class="btn btn-success" name="enviar" value="INGRESAR"
+                       style="position: relative;left: 45%;">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
